@@ -32,7 +32,7 @@ body {
     color: #fff;
     text-align: right;
     background-color: #5f47c1;
-    padding: 35px 15px;
+    padding: 30px 15px;
     border-radius: 15px 15px 0px 0px;
 
 }
@@ -66,9 +66,4 @@ body {
 .wide-btn {
     /* element takes up 2 grid columns  */
     grid-column: 2 span;
-}
-
-.disable {
-    pointer-events: none;
-    color: green;
 }
