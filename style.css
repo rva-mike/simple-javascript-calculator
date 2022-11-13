@@ -24,7 +24,7 @@ body {
     background-color: #fff;
     min-width: 370px;
     min-height: 600px;
-    border-radius: 15px;
+    border-radius: 15px 15px 0 0;
 }
 
 #display {
@@ -33,7 +33,7 @@ body {
     text-align: right;
     background-color: #5f47c1;
     padding: 35px 15px;
-    border-radius: 15px 15px 0 0;
+    border-radius: 15px 15px 0px 0px;
 
 }
 
@@ -41,8 +41,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: space-evenly;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    border: 1px solid #fff;
 }
 
 .button {
@@ -57,4 +56,14 @@ body {
     font-weight: 600;
     font-size: 27px;
     color: #444;
+}
+
+.button:hover {
+    color: #fff;
+    background-color: #6450b1;
+}
+
+.wide-btn {
+    /* element takes up 2 grid columns  */
+    grid-column: 2 span;
 }
