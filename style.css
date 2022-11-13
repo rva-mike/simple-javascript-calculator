@@ -1,3 +1,6 @@
+
+
+/* universal selector - selects all elements */
 * {
     padding: 0;
     margin: 0;
@@ -14,6 +17,44 @@ body {
     min-height: 100vh;
     background: rgb(58, 71, 180);
     background: linear-gradient(45deg, rgba(58, 71, 180, 1) 0%, rgba(252, 69, 248, 1) 100%);
+}
 
 
+.container {
+    background-color: #fff;
+    min-width: 370px;
+    min-height: 600px;
+    border-radius: 15px;
+}
+
+#display {
+    font-size: 35px;
+    color: #fff;
+    text-align: right;
+    background-color: #5f47c1;
+    padding: 35px 15px;
+    border-radius: 15px 15px 0 0;
+
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-height: 100px;
+    background-color: #eee;
+    border: 1px solid #fff;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 27px;
+    color: #444;
 }
