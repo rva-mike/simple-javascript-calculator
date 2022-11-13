@@ -67,3 +67,8 @@ body {
     /* element takes up 2 grid columns  */
     grid-column: 2 span;
 }
+
+.disable {
+    pointer-events: none;
+    color: green;
+}

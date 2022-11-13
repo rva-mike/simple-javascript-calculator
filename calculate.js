@@ -1,21 +1,20 @@
 let displaySection = document.getElementById('display')
-
 // from this collection, create an array 
 let buttons = Array.from(document.getElementsByClassName('button'))
 
 
-
 // map over buttons to create a new array and listen for click on an individual button, call function doCalculate on the element clicked
-buttons.map( button => {
+buttons.map(button => {
     button.addEventListener('click', el => {
         doCalculate(el)
     })
 })
 
 function doCalculate(e) {
+    let allButtons = document.getElementsByClassName('button');
 
     // when any button is clicked, remove the default zero, make it blank and fill it with the functionality assigned from that button
-    if(displaySection.innerText === '0'){
+    if (displaySection.innerText === '0') {
         displaySection.innerText = ''
     }
 
@@ -26,15 +25,25 @@ function doCalculate(e) {
             break;
 
         case 'DEL':
-            // removes the last character through slice method 
-            displaySection.innerText = displaySection.innerText.slice(0, -1);
+            if (displaySection.innerText) {
+                // removes the last character through slice method 
+                displaySection.innerText = displaySection.innerText.slice(0, -1);
+            }
+            if (displaySection.innerText == '' || 'error') {
+                displaySection.innerText = '0'
+            }
             break;
 
         case '=':
-            // calculate value of display text using 'eval' , a js function
-            displaySection.innerText = eval(displaySection.innerText);
+            // try executing, if unable to, catch and display error
+            try {
+                // calculate value of display text using 'eval' , a js function
+                displaySection.innerText = eval(displaySection.innerText);
+            } catch {
+                displaySection.innerText = "error"
+            }
             break;
-    
+
         default:
             displaySection.innerText += e.target.innerText
             break;
