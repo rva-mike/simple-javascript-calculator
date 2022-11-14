@@ -25,14 +25,19 @@ function doCalculate(e) {
             break;
 
         case 'DEL':
-            if (displaySection.innerText) {
+            if (displaySection.innerText !== 'error') {
                 // removes the last character through slice method 
                 displaySection.innerText = displaySection.innerText.slice(0, -1);
-            }
-            if (displaySection.innerText == '' || 'error') {
+            } else {
                 displaySection.innerText = '0'
             }
+            
+            if (displaySection.innerText == '') {
+                displaySection.innerText = '0'
+            }
+
             break;
+
 
         case '=':
             // try executing, if unable to, catch and display error
@@ -42,6 +47,7 @@ function doCalculate(e) {
             } catch {
                 displaySection.innerText = "error"
             }
+         
             break;
 
         default:
