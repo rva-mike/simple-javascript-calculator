@@ -13,7 +13,7 @@ buttons.map(button => {
 function doCalculate(e) {
     let allButtons = document.getElementsByClassName('button');
 
-    // when any button is clicked, remove the default zero, make it blank and fill it with the functionality assigned from that button
+    // when any button is clicked, remove the default zero and fill it with the functionality assigned from the switch statement below for that button
     if (displaySection.innerText === '0') {
         displaySection.innerText = ''
     }
